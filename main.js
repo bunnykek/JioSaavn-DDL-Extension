@@ -1,5 +1,5 @@
 async function download() {
-    let songurl = "https://www.jiosaavn.com/" + document.querySelector("#player > div.c-player__panel > figure > figcaption > h4 > a").attributes[4].textContent;
+    let songurl = "https://www.jiosaavn.com/" + document.querySelector("#player > div.c-player__panel > figure > figcaption > h4 > a").attributes['href'].textContent;
     let response = await fetch(songurl);
     let html = await response.text();
     let regxResult = html.match(/\"song_id\":\"(.+?)\"/);
